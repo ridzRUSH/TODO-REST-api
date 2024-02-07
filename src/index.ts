@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import "dotenv/config";
+import bodyParser from "body-parser";
 import mongose from "mongoose";
 import cookieParser from "cookie-parser";
 import swaggerJSDoc from "swagger-jsdoc";
@@ -11,6 +12,7 @@ import taskRoutes from "./routes/task";
 const app = express();
 app.use(cookieParser());
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 let PORT = 7000;
 app.use("/api/users", userRoutes);
