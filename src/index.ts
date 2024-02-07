@@ -17,14 +17,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/users", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
-mongose
-  .connect(process.env.MOGODB_CONNECTION_STRING as string)
-  .then(() => {
-    console.log("Succesfully connected");
-  })
-  .catch((e) => {
-    console.log("error " + e);
-  });
+mongose.connect(process.env.MOGODB_CONNECTION_STRING as string);
 
 const options = {
   definition: {
