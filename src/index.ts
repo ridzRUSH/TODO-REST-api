@@ -34,7 +34,10 @@ const options = {
       version: "1.0.0",
     },
     schemes: ["http", "https"],
-    servers: [{ url: "http://localhost:7000/" }],
+    servers: [
+      { url: "https://todo-rest-api-1-0.onrender.com/" },
+      { url: "http://localhost:7000/" },
+    ],
   },
   apis: [
     `${__dirname}/routes/user.ts`,
