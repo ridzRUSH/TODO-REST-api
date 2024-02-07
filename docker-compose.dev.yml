@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7000:7000"
+    environment:
+      MONGODB_CONNECTION_STRING: mongodb+srv://kpaadarsh:dYpr9rAearIHYOvi@todo.zaxa2cs.mongodb.net/?retryWrites=true&w=majority
+      JWT_SECREAT_KEY: gjsdhfkjsfda498784cbi#$$KJFkjjsjka$@%^&*()
+    command: npm run dev
+    volumes:
+      - .:/usr/src/app
